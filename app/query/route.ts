@@ -11,7 +11,7 @@ export async function GET() {
     `;
 
     return NextResponse.json({ data: result.rows });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Query failed:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
